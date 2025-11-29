@@ -9,6 +9,7 @@ git clone https://github.com/enricocristaudo/snake.c
 
 To play, run:
 ```bash
+cd snake.c
 make run
 ```
 
