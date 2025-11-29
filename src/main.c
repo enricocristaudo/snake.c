@@ -44,6 +44,10 @@ void DrawScore(int score) {
     char text[32];
     sprintf(text, "%d", score);
     DrawText(text, 60, SCREEN_HEIGHT + 25, 32, BLACK);
+
+    char time[32];
+    sprintf(time, "ELAPSED: %0.f", GetTime());
+    DrawText(time, SCREEN_WIDTH - 250, SCREEN_HEIGHT + 25, 32, BLACK);
 }
 
 void randomizeApple(Apple* apple) {
@@ -143,7 +147,10 @@ int main(void) {
                 PlaySound(eatingSound);
                 randomizeApple(&apple);
             }
-            if (snake.body[0].x < 0 || snake.body[0].x > SCREEN_WIDTH || snake.body[0].y < 0 || snake.body[0].y > SCREEN_HEIGHT) {
+            if (    snake.body[0].x + SQUARE_SIZE < 0
+                ||  snake.body[0].x > SCREEN_WIDTH
+                ||  snake.body[0].y + SQUARE_SIZE < 0
+                ||  snake.body[0].y > SCREEN_HEIGHT) {
                 break;
             }
         }
