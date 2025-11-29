@@ -50,7 +50,7 @@ packages/
 # Ignore compiled binaries
 *.o
 *.exe
-*.a
+# *.a
 *.bc
 *.so
 *.so.*
